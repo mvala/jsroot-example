@@ -34,3 +34,4 @@ node_modules
 
 # bower js modules
 public/vendor
+public/config.js

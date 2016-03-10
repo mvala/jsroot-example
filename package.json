@@ -9,6 +9,7 @@
   "dependencies": {
     "js-beautify" : "*",
     "bower": "*",
+    "bower-requirejs" : "*",
     "express.io": "*",
     "connect": "*"
   }
