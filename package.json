@@ -1,0 +1,16 @@
+{
+  "name": "alice-rsn-web",
+  "version": "0.0.0-alpha.1",
+  "private": true,
+  "scripts": {
+    "postinstall": "bower install",
+    "prestart": "npm install"
+  },
+  "dependencies": {
+    "js-beautify" : "*",
+    "bower": "*",
+    "express.io": "*",
+    "connect": "*",
+    "zmq":"*"
+  }
+}
