@@ -15,7 +15,9 @@
 
     <script src="main.js"></script>
     <script type='text/javascript'>
-        require(['vendor/jsroot/scripts/JSRootCore.js'], function(jsroot) {
+        requirejs.config({ paths: { "jsroot" : "vendor/jsroot/scripts/JSRootCore" } });
+
+        require(["jsroot"], function(jsroot) {
            jsroot.NewHttpRequest("hpx.json", 'object', function(obj) {
                jsroot.draw("drawing", obj, "hist");
            }).send();
