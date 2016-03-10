@@ -1,6 +1,6 @@
 {
-  "name": "alice-rsn-web",
-  "version": "0.0.0-alpha.1",
+  "name": "jsroot-example",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "postinstall": "bower install",

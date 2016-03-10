@@ -1,11 +1,11 @@
 {
-  "name": "alice-rsn-web",
+  "name": "jsroot-example",
   "license": "MIT",
   "private": true,
   "dependencies": {
     "bootstrap": "*",
     "d3": "*",
-    "jsroot": "git@github.com:mvala/jsroot.git"
+    "jsroot": "*"
 
   }
 }
