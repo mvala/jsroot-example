@@ -10,7 +10,6 @@
     "js-beautify" : "*",
     "bower": "*",
     "express.io": "*",
-    "connect": "*",
-    "zmq":"*"
+    "connect": "*"
   }
 }
