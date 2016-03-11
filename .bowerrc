@@ -1,6 +1,6 @@
 {
   "directory" : "public/vendor",
   "scripts": {
-    "postinstall": "bower-requirejs -t -c public/config.js"
+    "postinstall": "./node_modules/.bin/bower-requirejs -t -c public/config.js"
   }
 }

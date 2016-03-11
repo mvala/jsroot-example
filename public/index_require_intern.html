@@ -15,9 +15,8 @@
 
     <script src="main.js"></script>
     <script type='text/javascript'>
-        requirejs.config({ paths: { "jsroot" : "vendor/jsroot/scripts/JSRootCore" } });
-
-        require(["jsroot"], function(jsroot) {
+        // show how to load JSROOT with require.js, it will reuse internal JSROOT libraries
+        require(["vendor/jsroot/scripts/JSRootCore"], function(jsroot) {
            jsroot.NewHttpRequest("hpx.json", 'object', function(obj) {
                jsroot.draw("drawing", obj, "hist");
            }).send();

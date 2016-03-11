@@ -16,6 +16,7 @@
 
     <script src="main.js"></script>
     <script type='text/javascript'>
+        // load jsroot, defined in config.js. All external like d3 or jquery will be used from bower installation
         require(['jsroot'], function(jsroot) {
            jsroot.NewHttpRequest("hpx.json", 'object', function(obj) {
                jsroot.draw("drawing", obj, "hist");
