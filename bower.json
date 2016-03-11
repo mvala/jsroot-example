@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "*",
-    "d3": "*",
+    "requirejs": "*",
     "jsroot": "*"
 
   }

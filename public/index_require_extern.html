@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="JSROOT test">
+    <meta name="author" content="Martin Vala">
+    <title>JSROOT test - load external modules via require.js </title>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="vendor/requirejs/require.js"></script>
+    <script src="config.js"></script>
+
+    <script src="main.js"></script>
+    <script type='text/javascript'>
+        require(['jsroot'], function(jsroot) {
+           jsroot.NewHttpRequest("hpx.json", 'object', function(obj) {
+               jsroot.draw("drawing", obj, "hist");
+           }).send();
+        });
+    </script>
+
+</head>
+
+<body>
+    <h1>JSROOT example</h1>
+
+    <div id="drawing" style="width:800px; height:600px"></div>
+</body>
+
+
+</html>
