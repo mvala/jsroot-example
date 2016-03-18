@@ -17,24 +17,31 @@
 
 
     <script src="/socket.io/socket.io.js"></script>
-    <!--script src="vendor/jquery/dist/jquery.min.js"></script-->
-    <!--script src="vendor/jquery-ui/jquery-ui.min.js"></script-->
-    <!--script src="vendor/jquery-mousewheel/jquery.mousewheel.min.js"></script-->
-    <!--script src="vendor/jqueryui-touch-punch/jquery.ui.touch-punch.min.js"></script-->
-
     <!--script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script-->
-    <!--script src="vendor/d3/d3.min.js"></script-->
-    <!--script src="vendor/threejs/build/three.min.js"></script-->
-    <!--script src="main.js"></script-->
+    <!--script src="vendor/d3/d3.js"></script-->
+
 
    <!-- here ?bower flag indicates that we are working with bower installed scripts, JSROOT will use libraries from bower -->
-    <script src="vendor/jsroot/scripts/JSRootCore.js?bower" type="text/javascript"></script>
-
+    <script src="vendor/jsroot/scripts/JSRootCore.js?bower&jq2d&onload=createGUI" type="text/javascript"></script>
+    <script src="main.js"></script>
     <script type='text/javascript'>
+
+		function createGUI() {
+			var h = new JSROOT.HierarchyPainter("example", "myTreeDiv");
+
+			h.SetDisplay("simple", "myMainDiv"); // can be also "grid2x2" or "collapsible" or "tabs"
+
+			// one could use absolute path here like http://jsroot.gsi.de/files/hsimple.root
+			h.OpenRootFile("http://disk.saske.sk/mvala/AnalysisResults.root", function() {
+				h.display("hpxpy;1", "colz");
+			});
+		}
+		
         // json file stored in same folder, absolute address can be used as well
         JSROOT.NewHttpRequest("hpx.json", 'object', function(obj) {
             JSROOT.draw("drawing", obj, "hist");
         }).send();
+		
     </script>
 
 </head>
@@ -42,7 +49,8 @@
 <body>
     <h1>JSROOT example</h1>
     <h3><a href="index_require_extern.html">Via require.js (extern)</a></h3>, <h3><a href="index_require_intern.html">Via require.js (intern)</a></h3>
-
+	<div id="myTreeDiv" style="width: 250px; height: 100%; float:left"></div>
+  	<div id="myMainDiv" style="width: calc(100% - 250px); height:100%; float:right"></div>
     <div id="drawing" style="width:800px; height:600px"></div>
 </body>
 
